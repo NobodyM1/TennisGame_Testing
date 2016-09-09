@@ -14,6 +14,14 @@ public class TennisGame {
 		gameEnded = false ;
 	}
 	
+	public int getPlayerScore(int player){
+		switch (player){
+		case 1: return player1Points;
+		case 2: return player2Points;
+		default: return 0;
+		}
+	}
+	
 	private void checkGameEnded() {
 		if (player1Points>=4 && player1Points-player2Points>=2)
 			gameEnded = true;
@@ -86,6 +94,6 @@ public class TennisGame {
 			if (player2Points > 4 && player2Points - player1Points == 1)
 				return "player2 has advantage";							
 			
-			return  player2Score + " - " + player1Score ;
+			return  player1Score + " - " + player2Score ;
 	}
 }
